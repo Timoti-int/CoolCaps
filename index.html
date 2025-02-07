@@ -18,7 +18,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Početna</a></li>
-                <li><a href="#about-product">O proizvodu</a></li>
+                <li><a href="#product-details">O proizvodu</a></li>
                 <li><a href="#where-to-buy">Gde kupiti?</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="#contact">Kontakt</a></li>
@@ -27,46 +27,55 @@
         </div>
     </nav>
 
-    <!-- Hero Sekcija -->
+    <!-- Hero sekcija -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Svežina daha iz stomaka</h1>
-            <p>Osetite dugotrajnu svežinu sa revolucionarnom dvoslojnom formulom</p>
-            <a href="#product-details" class="cta-button">Otkrij više</a>
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="images/hero1.jpeg" alt="PaperMints Hero 1">
+            </div>
+            <div class="hero-image">
+                <img src="images/hero2.jpeg" alt="PaperMints Hero 2">
+            </div>
+            <div class="hero-image">
+                <img src="images/hero3.jpeg" alt="PaperMints Hero 3">
+            </div>
         </div>
     </section>
 
-    <!-- Product Details Sekcija -->
+    <!-- Discover more dugme -->
+    <div class="discover-more">
+        <a href="#product-details" class="discover-btn">Otkrij više</a>
+    </div>
+
+    <!-- Product details sekcija -->
     <section id="product-details" class="product-details">
-        <div class="container">
-            <div class="product-images">
-                <div class="product-image">
-                    <img src="images/product-detail-1.png" alt="PaperMints detalj 1" class="detail-img">
-                    <div class="image-description">
-                        <h3>CoolCaps Tuba Mint</h3>
-                        <p>18 kapsula</p>
-                    </div>
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="images/product-detail-1.png" alt="PaperMints detalj 1" class="detail-img">
+                <div class="image-description">
+                    <h3>CoolCaps Tuba Mint</h3>
+                    <p>18 kapsula</p>
                 </div>
-                <div class="product-image">
-                    <img src="images/product-detail-2.png" alt="PaperMints detalj 2" class="detail-img">
-                    <div class="image-description">
-                        <h3>CoolCaps Tuba Jagoda</h3>
-                        <p>18 kapsula</p>
-                    </div>
+            </div>
+            <div class="product-image">
+                <img src="images/product-detail-2.png" alt="PaperMints detalj 2" class="detail-img">
+                <div class="image-description">
+                    <h3>CoolCaps Box40</h3>
+                    <p>40 kapsula</p>
                 </div>
-                <div class="product-image">
-                    <img src="images/product-detail-3.png" alt="PaperMints detalj 3" class="detail-img">
-                    <div class="image-description">
-                        <h3>CoolCaps Box40</h3>
-                        <p>40 kapsula</p>
-                    </div>
+            </div>
+            <div class="product-image">
+                <img src="images/product-detail-3.png" alt="PaperMints detalj 3" class="detail-img">
+                <div class="image-description">
+                    <h3>CoolCaps Tuba Jagoda</h3>
+                    <p>18 kapsula</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- O Proizvodu Sekcija -->
-    <section id="about-product" class="about-product">
+    <section id="about" class="about">
         <div class="container">
             <h2>O proizvodu</h2>
             <div class="features-grid">
@@ -75,12 +84,12 @@
                     <p>Dvoslojna formula osigurava instant i dugotrajno osveženje daha.</p>
                 </div>
                 <div class="feature">
-                    <h3>Bez šećera</h3>
-                    <p>Naše kapsule su formulisane bez dodatog šećera, čineći ih idealnim za sve koji vode računa o zdravlju.</p>
+                    <h3>Faza 1</h3>
+                    <p>Spoljašnji omotač se otapa na jeziku i obezbeđuje instant svež dah!</p>
                 </div>
                 <div class="feature">
-                    <h3>Praktično pakovanje</h3>
-                    <p>Kompaktno pakovanje koje staje u svaki džep ili tašnu.</p>
+                    <h3>Faza 2</h3>
+                    <p>Kada se proguta unutrašnja kapsula, obezbeđuje se produžena svežina daha iz stomaka</p>
                 </div>
             </div>
         </div>
@@ -228,10 +237,6 @@
     <script src="js/shop.js"></script>
 
     <div class="chat-widget">
-        <div class="chat-header" id="chatHeader" style="cursor: pointer;">
-            <h3>PaperMints Asistent</h3>
-            <img src="images/asistent.png" alt="Asistent" class="assistant-icon">
-        </div>
         <div class="chat-body">
             <div class="chat-messages"></div>
             <div class="chat-input">
@@ -242,5 +247,37 @@
     </div>
 
     <script src="js/chat.js"></script>
+
+    <!-- Chat container i button -->
+    <div class="virtual-assistant">
+        <button class="assistant-button" id="toggleAssistant" style="position: fixed; bottom: 50px; right: 80px; z-index: 1000; border: none; background: none; cursor: pointer;">
+            <img src="images/asistent11.png" alt="Virtualni asistent">
+        </button>
+        
+        <div id="chatContainer" class="chat-container" style="display: none;">
+            <div class="chat-content">
+                <div class="chat-header">
+                    <h3>PaperMints Asistent</h3>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">Zdravo! Kako Vam mogu pomoći?</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Postavite pitanje...">
+                    <button id="sendMessage">Pošalji</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Pronađi i ukloni stari chat sadržaj
+        const oldChatContent = document.querySelector('/html/body/div[3]/div/div/div[1]');
+        if (oldChatContent) {
+            oldChatContent.parentElement.replaceWith(document.querySelector('.chat-content'));
+        }
+    });
+    </script>
 </body>
 </html> 

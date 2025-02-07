@@ -1,17 +1,49 @@
 // Funkcionalnost za prodavnicu
 document.addEventListener('DOMContentLoaded', function() {
     const quantityInputs = document.querySelectorAll('.quantity-input');
-    const orderForm = document.getElementById('orderForm');
     const orderDetails = document.getElementById('orderDetails');
+    const orderSummary = document.getElementById('orderSummary');
     const totalAmount = document.getElementById('totalAmount');
+    const totalPriceInput = document.getElementById('totalPrice');
     const submitButton = document.querySelector('.submit-order-btn');
+    const orderForm = document.getElementById('orderForm');
 
-    // Funkcija za ažuriranje ukupne cene i detalja porudžbine
+    // Dodajemo event listener za formu
+    orderForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Zaustavljamo automatsko slanje forme
+        
+        // Prikazujemo confirm dijalog
+        const isConfirmed = confirm('Da li ste sigurni da želite da potvrdite porudžbinu?');
+        
+        // Ako je korisnik potvrdio, nastavljamo sa slanjem forme
+        if (isConfirmed) {
+            this.submit();
+        }
+    });
+
+    // Event listeners za dugmiće + i -
+    document.querySelectorAll('.quantity-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const input = this.parentElement.querySelector('.quantity-input');
+            if (this.classList.contains('plus')) {
+                input.value = parseInt(input.value) + 1;
+            } else if (this.classList.contains('minus') && input.value > 0) {
+                input.value = parseInt(input.value) - 1;
+            }
+            updateOrderSummary();
+        });
+    });
+
+    // Event listeners za direktan unos količine
+    quantityInputs.forEach(input => {
+        input.addEventListener('input', updateOrderSummary);
+    });
+
     function updateOrderSummary() {
         let total = 0;
         let totalItems = 0;
-        let details = '';
         let orderText = '';
+        let detailsHtml = '';
 
         quantityInputs.forEach(input => {
             const quantity = parseInt(input.value);
@@ -22,62 +54,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const subtotal = quantity * price;
                 total += subtotal;
                 totalItems += quantity;
-                details += `<p>${productName} x ${quantity} = ${subtotal} RSD</p>`;
+                
                 orderText += `${productName}: ${quantity} kom. (${subtotal} RSD)\n`;
+                detailsHtml += `
+                    <div class="order-item">
+                        <span>${productName}</span>
+                        <span>${quantity} x ${price} = ${subtotal} RSD</span>
+                    </div>
+                `;
             }
         });
 
-        orderDetails.innerHTML = details;
-        totalAmount.textContent = `${total} RSD`;
-        
-        // Ažuriranje skrivenih polja za FormSubmit
-        document.getElementById('orderSummary').value = orderText;
-        document.getElementById('totalPrice').value = `${total} RSD`;
-        
-        // Omogući dugme samo ako je ukupna količina 3 ili više
+        orderDetails.innerHTML = detailsHtml;
+        orderSummary.value = orderText;
+        totalAmount.textContent = total + ' RSD';
+        totalPriceInput.value = total;
+
+        // Omogući dugme za naručivanje ako je minimalna količina dostignuta
         submitButton.disabled = totalItems < 3;
     }
-
-    // Event listeneri za dugmiće + i -
-    document.querySelectorAll('.quantity-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const input = this.parentElement.querySelector('.quantity-input');
-            const currentValue = parseInt(input.value);
-            
-            if (this.classList.contains('plus')) {
-                input.value = currentValue + 1;
-            } else if (this.classList.contains('minus') && currentValue > 0) {
-                input.value = currentValue - 1;
-            }
-            
-            updateOrderSummary();
-        });
-    });
-
-    // Event listener za direktan unos količine
-    quantityInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            if (this.value < 0) this.value = 0;
-            updateOrderSummary();
-        });
-    });
-
-    // Event listener za slanje forme
-    orderForm.addEventListener('submit', function(e) {
-        let totalItems = 0;
-        quantityInputs.forEach(input => {
-            totalItems += parseInt(input.value);
-        });
-
-        if (totalItems < 3) {
-            e.preventDefault();
-            alert('Minimalna porudžbina je 3 komada.');
-            return;
-        }
-
-        if (!confirm('Da li ste sigurni da želite da pošaljete porudžbinu?')) {
-            e.preventDefault();
-            return;
-        }
-    });
 }); 

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Prodavnica - PaperMints</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Ubacite vaš EmailJS User ID
+        })();
+    </script>
     <style>
         .quantity-selector {
             display: flex;
@@ -130,7 +136,7 @@
                     <input type="hidden" name="_subject" value="Nova PaperMints porudžbina">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="thanks.html">
+                    <input type="hidden" name="_next" value="https://coolcaps.github.io/thanks.html">
                     
                     <h3>Podaci za dostavu</h3>
                     <div class="form-group">
@@ -158,7 +164,7 @@
                         <p class="min-order-note">Minimalna porudžbina je 3 komada.</p>
                         <p class="shipping-note">Poštarina je besplatna</p>
                     </div>
-                    <button type="submit" class="submit-order-btn" disabled>Poruči</button>
+                    <button type="submit" class="submit-order-btn" >Poruči</button>
                 </form>
             </div>
         </div>
