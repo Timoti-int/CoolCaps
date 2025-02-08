@@ -60,15 +60,15 @@
             <div class="product-image">
                 <img src="images/product-detail-2.png" alt="PaperMints detalj 2" class="detail-img">
                 <div class="image-description">
-                    <h3>CoolCaps Tuba Jagoda</h3>
-                    <p>18 kapsula</p>
+                    <h3>CoolCaps Box40</h3>
+                    <p>40 kapsula</p>
                 </div>
             </div>
             <div class="product-image">
                 <img src="images/product-detail-3.png" alt="PaperMints detalj 3" class="detail-img">
                 <div class="image-description">
-                    <h3>CoolCaps Box40</h3>
-                    <p>40 kapsula</p>
+                    <h3>CoolCaps Tuba Jagoda</h3>
+                    <p>18 kapsula</p>
                 </div>
             </div>
         </div>
@@ -278,6 +278,64 @@
             oldChatContent.parentElement.replaceWith(document.querySelector('.chat-content'));
         }
     });
+
+    document.getElementById('hamburger').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
     </script>
+
+    <style>
+    @media screen and (max-width: 768px) {
+        /* Hamburger dugme */
+        .hamburger {
+            display: block;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Stilizacija navigacije za mobile */
+        .nav-links {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            height: 100vh;
+            width: 250px;
+            background: white;
+            padding: 50px 20px;
+            transition: 0.3s;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Kada je meni otvoren */
+        .nav-links.active {
+            right: 0;
+        }
+
+        /* Vertikalna lista linkova */
+        .nav-links li {
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* Pomeramo asistenta više udesno na mobilnoj verziji */
+        #toggleAssistant {
+            right: 20px !important; /* smanjujemo sa 80px na 20px */
+        }
+    }
+    </style>
+
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Dodati pre zatvaranja body taga -->
+    <script src="js/mobile-nav.js"></script>
 </body>
 </html> 
