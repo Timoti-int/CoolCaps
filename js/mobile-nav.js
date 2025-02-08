@@ -7,5 +7,12 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.toggle('active');
             console.log('Kliknuto na hamburger'); // debug
         });
+
+        // Dodajemo zatvaranje menija na klik linka
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
     }
 }); 
