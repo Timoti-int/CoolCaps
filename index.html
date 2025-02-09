@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaperMints CoolCaps - Svež dah u svakom trenutku</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-styles.css">
 </head>
 <body>
     <!-- Navigacija -->
@@ -233,19 +234,9 @@
         </div>
     </footer>
 
-    <!-- Povezivanje JavaScript fajla -->
+    <!-- Samo potrebni JavaScript fajlovi -->
     <script src="js/shop.js"></script>
-
-    <div class="chat-widget">
-        <div class="chat-body">
-            <div class="chat-messages"></div>
-            <div class="chat-input">
-                <input type="text" placeholder="Postavite pitanje...">
-                <button class="send-btn">Pošalji</button>
-            </div>
-        </div>
-    </div>
-
+    <script src="js/mobile-nav.js"></script>
     <script src="js/chat.js"></script>
 
     <!-- Chat container i button -->
@@ -269,19 +260,6 @@
             </div>
         </div>
     </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Pronađi i ukloni stari chat sadržaj
-        const oldChatContent = document.querySelector('/html/body/div[3]/div/div/div[1]');
-        if (oldChatContent) {
-            oldChatContent.parentElement.replaceWith(document.querySelector('.chat-content'));
-        }
-    });
-
-    document.getElementById('hamburger').addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
     </script>
 
     <style>
@@ -324,18 +302,22 @@
 
         /* Pomeramo asistenta više udesno na mobilnoj verziji */
         #toggleAssistant {
-            right: 20px !important; /* smanjujemo sa 80px na 20px */
+            right: 20px !important;
         }
     }
     </style>
 
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Dodati pre zatvaranja body taga -->
-    <script src="js/mobile-nav.js"></script>
+    <!-- Prvo učitaj mobilnu navigaciju -->
+    <script>
+    fetch('mobile-navigation.html')
+        .then(response => response.text())
+        .then(html => {
+            document.body.insertAdjacentHTML('beforeend', html);
+            // Tek nakon što je navigacija učitana, učitaj JavaScript
+            const script = document.createElement('script');
+            script.src = 'js/mobile-nav.js';
+            document.body.appendChild(script);
+        });
+    </script>
 </body>
 </html> 
