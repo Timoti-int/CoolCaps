@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Prodavnica - PaperMints</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("YOUR_USER_ID"); // Ubacite vaš EmailJS User ID
+        })();
+    </script>
+    <style>
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .quantity-btn {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #003366;
+            background-color: white;
+            color: #003366;
+            cursor: pointer;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .quantity-input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border: 1px solid #003366;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .quantity-input::-webkit-inner-spin-button,
+        .quantity-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .quantity-input {
+            -moz-appearance: textfield;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dodati odmah nakon otvaranja body taga -->
+    <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Navigacija -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="PaperMints Logo" class="logo-img">
+                    <img src="images/logo2.png" alt="PaperMints Logo 2" class="logo2-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="index.html#product-details">O proizvodu</a></li>
+                <li><a href="index.html#where-to-buy">Gde kupiti?</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Kontakt</a></li>
+                <li><a href="shop.html" class="cta-nav">Poruči online</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Prodavnica Sekcija -->
+    <section class="shop">
+        <div class="container">
+            <h2>Online prodavnica</h2>
+            <div class="shop-container">
+                <!-- Proizvodi -->
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/product-detail-1.png" alt="CoolCaps Tuba Mint" class="product-img">
+                        <h3>CoolCaps Tuba Mint</h3>
+                        <p class="price">370 RSD</p>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" data-product="detail-1">-</button>
+                            <input type="number" min="0" value="0" class="quantity-input" data-product="detail-1" data-price="370">
+                            <button class="quantity-btn plus" data-product="detail-1">+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product-detail-2.png" alt="CoolCaps Tuba Jagoda" class="product-img">
+                        <h3>CoolCaps Tuba Jagoda</h3>
+                        <p class="price">370 RSD</p>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" data-product="detail-2">-</button>
+                            <input type="number" min="0" value="0" class="quantity-input" data-product="detail-2" data-price="370">
+                            <button class="quantity-btn plus" data-product="detail-2">+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product-detail-3.png" alt="CoolCaps Box40" class="product-img">
+                        <h3>CoolCaps Box40</h3>
+                        <p class="price">690 RSD</p>
+                        <div class="quantity-selector">
+                            <button class="quantity-btn minus" data-product="detail-3">-</button>
+                            <input type="number" min="0" value="0" class="quantity-input" data-product="detail-3" data-price="690">
+                            <button class="quantity-btn plus" data-product="detail-3">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forma za naručivanje -->
+                <form id="orderForm" class="order-form" action="https://formsubmit.co/papermintssrbija@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Nova PaperMints porudžbina">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://coolcaps.github.io/thanks.html">
+                    
+                    <h3>Podaci za dostavu</h3>
+                    <div class="form-group">
+                        <label for="name">Ime*</label>
+                        <input type="text" id="name" name="Ime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="surname">Prezime*</label>
+                        <input type="text" id="surname" name="Prezime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Adresa*</label>
+                        <input type="text" id="address" name="Adresa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Broj telefona*</label>
+                        <input type="tel" id="phone" name="Telefon" required>
+                    </div>
+                    <div class="order-summary">
+                        <h4>Pregled porudžbine</h4>
+                        <div id="orderDetails"></div>
+                        <input type="hidden" id="orderSummary" name="Porudžbina">
+                        <p class="total">Ukupno: <span id="totalAmount">0 RSD</span></p>
+                        <input type="hidden" id="totalPrice" name="Ukupna_cena">
+                        <p class="min-order-note">Minimalna porudžbina je 3 komada.</p>
+                        <p class="shipping-note">Poštarina je besplatna</p>
+                    </div>
+                    <button type="submit" class="submit-order-btn" >Poruči</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 PaperMints. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/shop.js"></script>
+    <script src="js/mobile-nav.js"></script>
+
+    <!-- Modal za potvrdu porudžbine -->
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h3>Potvrda porudžbine</h3>
+            <p>Da li želite da potvrdite porudžbinu?</p>
+            <div class="modal-buttons">
+                <button id="confirmYes" class="btn btn-primary">Da</button>
+                <button id="confirmNo" class="btn btn-secondary">Ne</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal za uspešnu porudžbinu -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <h3>Uspešna porudžbina</h3>
+            <p>Vaša porudžbina je evidentirana.</p>
+            <div class="modal-buttons">
+                <button id="successOk" class="btn btn-primary">OK</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
