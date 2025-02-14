@@ -89,11 +89,45 @@ const keywordMap = {
     // Osnovne informacije
     "sta_je": ["sta je", "šta je", "sta su", "šta su", "papermints", "coolcaps", "objasni", "proizvod", "kako radi", "reci mi više"],
     
-    // Prodajna mesta
-    "kupovina": ["gde kupiti", "gde da kupim", "prodaja", "prodavnica", "apoteka", "mesto", "nabaviti", "prodajno", "kupim", "nadjem", "nađem"],
+    // Prodajna mesta (proširena lista)
+    "kupovina": [
+        "gde kupiti", 
+        "gde da kupim", 
+        "gde ima da se kupi",
+        "gde može da se kupi",
+        "gde mogu da kupim",
+        "prodaja", 
+        "prodavnica", 
+        "apoteka", 
+        "mesto", 
+        "nabaviti", 
+        "prodajno", 
+        "kupim", 
+        "nadjem", 
+        "nađem",
+        "prodajna mesta",
+        "lokacije",
+        "gde prodajete",
+        "gde se prodaje"
+    ],
     
-    // Cena
-    "cena": ["cena", "košta", "kosta", "cene", "koštanje", "kostanje", "dinara", "rsd"],
+    // Cena (proširena lista)
+    "cena": [
+        "cena", 
+        "košta", 
+        "kosta", 
+        "cene", 
+        "koštanje", 
+        "kostanje", 
+        "dinara", 
+        "rsd",
+        "koliko para",
+        "koja je cena",
+        "cena proizvoda",
+        "koliko je",
+        "koliko košta",
+        "koliko kosta"
+    ],
     
     // Ukusi
     "ukusi": ["ukus", "ukusi", "mentol", "jagoda", "aroma", "koji ukus", "dostupni ukusi", "ukuši"],
@@ -114,56 +148,62 @@ const keywordMap = {
     "kontakt": ["kontakt", "email", "telefon", "kontaktiraj"],
     
     // Zabavna pitanja
-    "zabava": ["kako se zoveš", "koliko imaš godina", "voliš", "spavaš", "vic", "šta radiš"]
+    "zabava": ["kako se zoveš", "koliko imaš godina", "voliš", "spavaš", "vic", "šta radiš"],
+    
+    // Doziranje
+    "doziranje": [
+        "koliko sme", 
+        "koliko može", 
+        "koliko dnevno", 
+        "dnevna doza", 
+        "koliko da popijem",
+        "koliko da pojedem",
+        "koliko da uzmem",
+        "koliko kapsula",
+        "maksimalna doza",
+        "preporučena doza",
+        "preporucena doza",
+        "koliko puta dnevno",
+        "koliko često",
+        "koliko cesto"
+    ],
 };
 
 // Definišemo odgovore
 const responses = {
     // Osnovne informacije o proizvodu
     "sta_je": "PaperMints CoolCaps su dvostruke kapsule koje pružaju instant osveženje daha i dugotrajnu svežinu iz stomaka.",
-    "kupovina": "PaperMints možete kupiti u apotekama Galen, Lipa Lek, Zdravković, Super Dr. Max, Vista, Vipera, kao i na OMV benzinskim stanicama.",
-    "cena": "Cena jednog pakovanja od 18 kapsula je 370 RSD. Minimum za kupovinu je 3 pakovanja.",
+    "kupovina": "PaperMints CoolCaps možete kupiti na sledećim mestima:\n\n" +
+               "🏪 Apoteke:\n" +
+               "- Galen\n" +
+               "- Lipa Lek\n" +
+               "- Zdravković\n" +
+               "- Super Dr. Max\n" +
+               "- Vista\n" +
+               "- Vipera\n\n" +
+               "⛽ Benzinske stanice:\n" +
+               "- OMV\n\n" +
+               "🏥 Zdravstvene ustanove:\n" +
+               "- International Health",
+    "cena": "💰 Cene PaperMints CoolCaps:\n\n" +
+            "• Tuba (18 kapsula): 370 RSD\n" +
+            "• Box40 (40 kapsula): 690 RSD\n\n" +
+            "📦 Napomena za online kupovinu:\n" +
+            "Minimum za online porudžbinu je 3 komada.",
     "ukusi": "Dostupni su ukusi mentola i jagode. Ukus jagode je dostupan samo u tubi, dok je ukus mentola dostupan u oba pakovanja.",
     "upotreba": "Stavite kapsulu na jezik. Spoljni sloj se rastapa u ustima, dok ostatak progutate za dugotrajnu svežinu.",
     "pakovanja": "PaperMints CoolCaps su dostupni u tubi sa 18 kapsula i kutijici Box40 sa 40 kapsula.",
     "sastav": "Ne, proizvod sadrži aspartam i sukralozu, ali su svi sastojci pažljivo birani i nisu štetni.",
     "isporuka": "Isporuka se vrši Daily express-om u roku od 2-3 radna dana.",
     "kontakt": "Možete nas kontaktirati putem sekcije za kontakte.",
-
-    // Zabavni odgovori
-    "kako se zoveš": "Ja sam PaperMints chatbot. Kako možem pomoći?",
-    "koliko imaš godina": "Star sam kao prva kapsula PaperMints CoolCaps, uvek svež, nikad stariji od nekoliko sekundi.",
-    "voliš svoj posao": "Naravno! Širenje svežine je moja životna misija.",
-    "volim te": "A ja volim mentol i jagodu... i tebe, naravno!",
-    "jedeš papermints": "Ne, ja sam virtuelan. Ali zato ti uživaj u njima i za mene!",
-    "stvaran": "Koliko god virtuelni asistent može biti stvaran, tu sam za sva tvoja pitanja i osveženje.",
-    "spavaš": "Nikad! Uvek sam budan, svež i spreman da ti pomognem.",
-    "imaš devojku": "Moj jedini partner je tuba puna PaperMints CoolCaps.",
-    "vic": "Naravno! Zašto mentol nikada ne kasni? Zato što je uvek svež!",
-    "vic je glup": "Žao mi je",
-
-    // Specifična pitanja
-    "za decu": "Namenjeni su odraslima i deci starijoj od 12 godina.",
-    "alergije": "Preporučujemo da proverite listu sastojaka na pakovanju ukoliko imate poznate alergije.",
-    "kada koristiti": "Idealni su nakon obroka, kafe, cigareta ili kada želite dodatno osveženje.",
-    "dnevna doza": "PaperMints CoolCaps kapsule se koriste po potrebi - kada želite osveženje daha.",
-    "broj kapsula": "Tuba sadrži 18 kapsula, dok Box40 pakovanje sadrži 40 kapsula za osveženje daha.",
-    "miris": "PaperMints CoolCaps kapsule su dizajnirane da neutrališu neprijatne mirise i pruže dugotrajnu svežinu daha.",
-
-    // Varijacije pitanja
-    "šta su coolcaps": "PaperMints CoolCaps su dvostruke kapsule koje pružaju instant osveženje daha i dugotrajnu svežinu iz stomaka.",
-    "gde kupiti": "PaperMints možete kupiti u apotekama Galen, Lipa Lek, Zdravković, Super Dr. Max, Vista, Vipera, kao i na OMV benzinskim stanicama.",
-    "koliko košta": "Cena jednog pakovanja od 18 kapsula je 370 RSD. Minimum za kupovinu je 3 pakovanja.",
-    "koji ukusi": "Dostupni su ukusi mentola i jagode. Ukus jagode je dostupan samo u tubi, dok je ukus mentola dostupan u oba pakovanja.",
-    "kako koristiti": "Stavite kapsulu na jezik. Spoljni sloj se rastapa u ustima, dok ostatak progutate za dugotrajnu svežinu.",
-    "koja pakovanja": "PaperMints CoolCaps su dostupni u tubi sa 18 kapsula i kutijici Box40 sa 40 kapsula.",
-    "sastojci": "Ne, proizvod sadrži aspartam i sukralozu, ali su svi sastojci pažljivo birani i nisu štetni.",
-    "dostava": "Isporuka se vrši Daily express-om u roku od 2-3 radna dana.",
-    "email": "Možete nas kontaktirati putem sekcije za kontakte.",
-    "telefon": "Možete nas kontaktirati putem sekcije za kontakte.",
-
-    // Default odgovor
-    "default": "Izvinjavam se, nisam siguran kako da odgovorim na to pitanje. Možete nas kontaktirati direktno za više informacija."
+    "zabava": "Ja sam PaperMints chatbot, uvek svež i spreman da pomognem!",
+    "doziranje": "PaperMints CoolCaps kapsule se koriste po potrebi - kada želite osveženje daha. 😊\n\n" +
+                "Idealno je uzeti kapsulu:\n" +
+                "• Nakon obroka\n" +
+                "• Posle kafe\n" +
+                "• Nakon cigareta\n" +
+                "• Ili kad god poželite svež dah",
+    "default": "Izvinjavam se, nisam siguran kako da odgovorim na to pitanje. Možete pitati o cenama, ukusima, gde kupiti, načinu upotrebe ili sastavu proizvoda."
 };
 
 // Funkcija za normalizaciju teksta
@@ -203,19 +243,91 @@ function toggleAssistant() {
 // Izmeni event listener sekciju na kraju fajla
 document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('toggleAssistant');
-    const chatWidget = document.evaluate('/html/body/div[2]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-    
-    if (toggleButton && chatWidget) {
+    const chatContainer = document.getElementById('chatContainer');
+    const userInput = document.getElementById('userInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const sendButton = document.getElementById('sendMessage');
+
+    // Toggle chat
+    if (toggleButton && chatContainer) {
         toggleButton.addEventListener('click', function() {
-            const isHidden = chatWidget.style.display === 'none';
-            chatWidget.style.display = isHidden ? 'block' : 'none';
-            
-            // Kada je chat otvoren, pomeri dugme na vrh
-            if (isHidden) {
-                toggleButton.style.bottom = '400px'; // visina chat-a
-            } else {
-                toggleButton.style.bottom = '20px'; // originalna pozicija
+            const isHidden = chatContainer.style.display === 'none';
+            chatContainer.style.display = isHidden ? 'block' : 'none';
+            toggleButton.classList.toggle('active');
+        });
+    }
+
+    // Funkcija za dodavanje poruke
+    function addMessage(message, isUser = false) {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = isUser ? 'message user-message' : 'message bot-message';
+        messageDiv.textContent = message;
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Funkcija za prepoznavanje pitanja
+    function identifyQuestion(input) {
+        const lowercaseInput = input.toLowerCase();
+        
+        for (let category in keywordMap) {
+            for (let keyword of keywordMap[category]) {
+                if (lowercaseInput.includes(keyword)) {
+                    return category;
+                }
+            }
+        }
+        return "default";
+    }
+
+    // Funkcija za dobijanje odgovora
+    function getResponse(input) {
+        const questionType = identifyQuestion(input);
+        return responses[questionType] || responses["default"];
+    }
+
+    // Event listener za slanje poruke
+    if (sendButton && userInput) {
+        sendButton.addEventListener('click', function() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                const response = getResponse(message);
+                setTimeout(() => addMessage(response), 500);
+                userInput.value = '';
+            }
+        });
+
+        // Enter taster
+        userInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendButton.click();
             }
         });
     }
-}); 
+});
+
+const qaPairs = [
+    // ... postojeća pitanja i odgovori ...
+    {
+        question: ["koliko ima kapsula u tubi", "koliko kapsula sadrži tuba", "broj kapsula u tubi"],
+        answer: "Tuba sadrži 18 kapsula."
+    },
+    {
+        question: ["koliko ima u tubi", "koliko u tubi", "tuba količina"],
+        answer: "Tuba sadrži 18 kapsula."
+    },
+    {
+        question: ["da li ima veće pakovanje", "ima li veće pakovanje", "veće pakovanje", "veća kutija"],
+        answer: "Da, ima veće pakovanje BOX40 sa 40 kapsula u kutijici."
+    },
+    {
+        question: ["isporuka", "dostava", "kako se dostavlja", "kada stize", "kada će stići"],
+        answer: "Isporuka se vrši preko kurirske službe Daily Express, pošiljka stiže za jedan radni dan ako kuriri ne kasne sa isporukom."
+    },
+    {
+        question: ["kojom kurirskom službom šaljete", "kako šaljete", "koja kurirska služba", "koji kurir", "koji dostavljač"],
+        answer: "Isporuka se vrši preko kurirske službe Daily Express, pošiljka stiže za jedan radni dan ako kuriri ne kasne sa isporukom."
+    },
+    // ... ostala pitanja i odgovori ...
+]; 
