@@ -305,29 +305,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-});
-
-const qaPairs = [
-    // ... postojeća pitanja i odgovori ...
-    {
-        question: ["koliko ima kapsula u tubi", "koliko kapsula sadrži tuba", "broj kapsula u tubi"],
-        answer: "Tuba sadrži 18 kapsula."
-    },
-    {
-        question: ["koliko ima u tubi", "koliko u tubi", "tuba količina"],
-        answer: "Tuba sadrži 18 kapsula."
-    },
-    {
-        question: ["da li ima veće pakovanje", "ima li veće pakovanje", "veće pakovanje", "veća kutija"],
-        answer: "Da, ima veće pakovanje BOX40 sa 40 kapsula u kutijici."
-    },
-    {
-        question: ["isporuka", "dostava", "kako se dostavlja", "kada stize", "kada će stići"],
-        answer: "Isporuka se vrši preko kurirske službe Daily Express, pošiljka stiže za jedan radni dan ako kuriri ne kasne sa isporukom."
-    },
-    {
-        question: ["kojom kurirskom službom šaljete", "kako šaljete", "koja kurirska služba", "koji kurir", "koji dostavljač"],
-        answer: "Isporuka se vrši preko kurirske službe Daily Express, pošiljka stiže za jedan radni dan ako kuriri ne kasne sa isporukom."
-    },
-    // ... ostala pitanja i odgovori ...
-]; 
+}); 
