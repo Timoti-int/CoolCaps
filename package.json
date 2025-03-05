@@ -6,6 +6,7 @@
   },
   "scripts": {
     "optimize": "node js/optimize-images.js",
-    "replace": "node js/replace-images.js"
+    "replace": "node js/replace-images.js",
+    "favicon": "node js/create-favicon.js"
   }
 }
