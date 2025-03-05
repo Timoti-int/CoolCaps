@@ -1,6 +1,11 @@
 {
-  "name": "papermints",
-  "version": "0.1.0",
-  "private": true
+  "name": "coolcaps",
+  "version": "1.0.0",
+  "dependencies": {
+    "sharp": "^0.33.2"
+  },
+  "scripts": {
+    "optimize": "node js/optimize-images.js",
+    "replace": "node js/replace-images.js"
+  }
 }
-cotrolpanel
