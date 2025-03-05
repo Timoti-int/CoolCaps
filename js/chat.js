@@ -183,7 +183,6 @@ const responses = {
                "- Vipera\n\n" +
                "⛽ Benzinske stanice:\n" +
                "- OMV\n\n" +
-               "🏥 Zdravstvene ustanove:\n" +
                "- International Health",
     "cena": "💰 Cene PaperMints CoolCaps:\n\n" +
             "• Tuba (18 kapsula): 370 RSD\n" +
