@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Preload ključnih resursa -->
+    <link rel="preload" href="images/logo.png" as="image">
+    <link rel="preload" href="images/hero1.jpeg" as="image">
+    <link rel="preload" href="css/style.css" as="style">
+    
+    <!-- Odloženo učitavanje CSS-a koji nije kritičan -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-styles.css" media="print" onload="this.media='all'">
+    
     <!-- SEO Meta tagovi -->
     <title>PaperMints CoolCaps - Svež dah u svakom trenutku | Osvežavajuće kapsule za dah</title>
     <meta name="description" content="PaperMints CoolCaps - inovativne dvoslojne kapsule za dugotrajan svež dah. Instant i produženo osveženje sa prirodnim sastojcima. Dostupno u apotekama širom Srbije.">
@@ -61,9 +70,6 @@
     <link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/mobile-styles.css">
-
     <!-- Strukturirani podaci za Google -->
     <script type="application/ld+json">
     {
@@ -115,8 +121,8 @@
         <div class="container">
             <div class="logo-container">
                 <a href="#home">
-                    <img src="images/logo.png" alt="PaperMints CoolCaps Logo - Osvežavajuće kapsule za svež dah" class="logo-img">
-                    <img src="images/logo2.png" alt="PaperMints CoolCaps tekstualni logo" class="logo2-img">
+                    <img src="images/logo.png" alt="PaperMints CoolCaps Logo - Osvežavajuće kapsule za svež dah" class="logo-img" fetchpriority="high">
+                    <img src="images/logo2.png" alt="PaperMints CoolCaps tekstualni logo" class="logo2-img" fetchpriority="high">
                 </a>
             </div>
             <ul class="nav-links">
@@ -134,13 +140,13 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-image">
-                <img src="images/hero1.jpeg" alt="PaperMints CoolCaps osvežavajuće kapsule u elegantnom pakovanju">
+                <img src="images/hero1.jpeg" alt="PaperMints CoolCaps osvežavajuće kapsule u elegantnom pakovanju" fetchpriority="high">
             </div>
             <div class="hero-image">
-                <img src="images/hero2.jpeg" alt="PaperMints CoolCaps dvoslojna tehnologija za dugotrajan svež dah">
+                <img src="images/hero2.jpeg" alt="PaperMints CoolCaps dvoslojna tehnologija za dugotrajan svež dah" loading="lazy">
             </div>
             <div class="hero-image">
-                <img src="images/hero3.jpeg" alt="PaperMints CoolCaps prirodni sastojci za instant osveženje">
+                <img src="images/hero3.jpeg" alt="PaperMints CoolCaps prirodni sastojci za instant osveženje" loading="lazy">
             </div>
         </div>
     </section>
@@ -154,21 +160,21 @@
     <section id="product-details" class="product-details">
         <div class="product-details-container">
             <div class="product-image">
-                <img src="images/product-detail-1.png" alt="CoolCaps Tuba Mint - 18 osvežavajućih kapsula sa ukusom mente" class="detail-img">
+                <img src="images/product-detail-1.png" alt="CoolCaps Tuba Mint - 18 osvežavajućih kapsula sa ukusom mente" class="detail-img" loading="lazy">
                 <div class="image-description">
                     <h3>CoolCaps Tuba Mint</h3>
                     <p>18 kapsula</p>
                 </div>
             </div>
             <div class="product-image">
-                <img src="images/product-detail-2.png" alt="CoolCaps Box40 - Ekonomično pakovanje sa 40 kapsula za dugotrajan svež dah" class="detail-img">
+                <img src="images/product-detail-2.png" alt="CoolCaps Box40 - Ekonomično pakovanje sa 40 kapsula za dugotrajan svež dah" class="detail-img" loading="lazy">
                 <div class="image-description">
                     <h3>CoolCaps Box40</h3>
                     <p>40 kapsula</p>
                 </div>
             </div>
             <div class="product-image">
-                <img src="images/product-detail-3.png" alt="CoolCaps Tuba Jagoda - 18 osvežavajućih kapsula sa ukusom jagode" class="detail-img">
+                <img src="images/product-detail-3.png" alt="CoolCaps Tuba Jagoda - 18 osvežavajućih kapsula sa ukusom jagode" class="detail-img" loading="lazy">
                 <div class="image-description">
                     <h3>CoolCaps Tuba Jagoda</h3>
                     <p>18 kapsula</p>
@@ -204,28 +210,28 @@
             <h2>Gde kupiti?</h2>
             <div class="partners-grid">
                 <div class="partner-logo">
-                    <img src="images/omv.png" alt="OMV benzinske stanice - Ovlašćeni prodavac PaperMints proizvoda" class="partner-img">
+                    <img src="images/omv.png" alt="OMV benzinske stanice - Ovlašćeni prodavac PaperMints proizvoda" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/galen.jpg" alt="Galen Pharm apoteke - Pronađite PaperMints proizvode" class="partner-img">
+                    <img src="images/galen.jpg" alt="Galen Pharm apoteke - Pronađite PaperMints proizvode" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/lipalek.jpg" alt="Lipa Lek apoteke - Kupite PaperMints CoolCaps" class="partner-img">
+                    <img src="images/lipalek.jpg" alt="Lipa Lek apoteke - Kupite PaperMints CoolCaps" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/vipera.jpg" alt="Vipera apoteke - Dostupni PaperMints proizvodi" class="partner-img">
+                    <img src="images/vipera.jpg" alt="Vipera apoteke - Dostupni PaperMints proizvodi" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/superdrmax.png" alt="Super Dr. Max apoteke - Ovlašćeni distributer PaperMints proizvoda" class="partner-img">
+                    <img src="images/superdrmax.png" alt="Super Dr. Max apoteke - Ovlašćeni distributer PaperMints proizvoda" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/internationalhealth.png" alt="International Health apoteke - PaperMints partner" class="partner-img">
+                    <img src="images/internationalhealth.png" alt="International Health apoteke - PaperMints partner" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/vista.jpg" alt="Vista apoteke - Pronađite PaperMints CoolCaps" class="partner-img">
+                    <img src="images/vista.jpg" alt="Vista apoteke - Pronađite PaperMints CoolCaps" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/zdravkovic.png" alt="Zdravković apoteke - Kupite PaperMints proizvode" class="partner-img">
+                    <img src="images/zdravkovic.png" alt="Zdravković apoteke - Kupite PaperMints proizvode" class="partner-img" loading="lazy">
                 </div>
             </div>
         </div>
@@ -337,9 +343,9 @@
     </footer>
 
     <!-- Samo potrebni JavaScript fajlovi -->
-    <script src="js/shop.js"></script>
-    <script src="js/mobile-nav.js"></script>
-    <script src="js/chat.js"></script>
+    <script defer src="js/shop.js"></script>
+    <script defer src="js/mobile-nav.js"></script>
+    <script defer src="js/chat.js"></script>
 
     <!-- Chat container i button -->
     <div class="virtual-assistant">

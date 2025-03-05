@@ -8,6 +8,7 @@
     "optimize": "node js/optimize-images.js",
     "replace": "node js/replace-images.js",
     "favicon": "node js/create-favicon.js",
-    "optimize-logo": "node js/optimize-logo.js"
+    "optimize-logo": "node js/optimize-logo.js",
+    "optimize-all": "node js/optimize-all-images.js"
   }
 }
