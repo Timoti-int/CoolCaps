@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Sitemap: https://papermints.rs/sitemap.xml
+
+# Dozvoli indeksiranje svih važnih stranica
+Allow: /index.html
+Allow: /blog.html
+Allow: /shop.html
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Zabrani indeksiranje tehničkih fajlova
+Disallow: /node_modules/
+Disallow: /.git/ 
