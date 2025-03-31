@@ -335,7 +335,7 @@ body {
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -1100,12 +1100,12 @@ html {
 
 .order-form h3 {
     color: #003366;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     font-size: 1.5rem;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .form-group label {
@@ -1121,9 +1121,57 @@ html {
     border-radius: 5px;
 }
 
+/* Stilovi za polja imena */
+.name-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.name-group, .surname-group {
+    flex: 1;
+}
+
+.name-group input, .surname-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.name-group label, .surname-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
+/* Stilovi za polja adrese */
+.address-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.city-group, .zip-group {
+    flex: 1;
+}
+
+.city-group input, .zip-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.city-group label, .zip-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
 .order-summary {
-    margin-top: 30px;
-    padding-top: 20px;
+    margin-top: 20px;
+    padding-top: 15px;
     border-top: 1px solid #ddd;
 }
 
@@ -1131,13 +1179,13 @@ html {
     font-size: 1.2rem;
     font-weight: bold;
     color: #003366;
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .min-order-note {
     color: #666;
     font-size: 0.9rem;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .submit-order-btn {
@@ -1162,21 +1210,13 @@ html {
 }
 
 /* Responsive dizajn */
-@media (max-width: 992px) {
-    .shop-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 576px) {
+    .name-details,
+    .address-details {
+        flex-direction: column;
+        gap: 15px;
     }
 }
-
-@media (max-width: 576px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-} 
 
 /* Dodajte ove stilove u postojeći CSS */
 .thank-you-page {
@@ -1937,5 +1977,69 @@ html {
 
     #toggleAssistant {
         right: 20px !important;
+    }
+} 
+
+/* Stilovi za polja imena */
+.name-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.name-group, .surname-group {
+    flex: 1;
+}
+
+.name-group input, .surname-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.name-group label, .surname-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
+/* Responsive dizajn za polja imena */
+@media (max-width: 576px) {
+    .name-details {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Stilovi za polja adrese */
+.address-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.city-group, .zip-group {
+    flex: 1;
+}
+
+.city-group input, .zip-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.city-group label, .zip-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #003366;
+}
+
+/* Responsive dizajn za polja adrese */
+@media (max-width: 576px) {
+    .address-details {
+        flex-direction: column;
+        gap: 15px;
     }
 } 

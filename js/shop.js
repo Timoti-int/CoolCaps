@@ -32,21 +32,37 @@ document.addEventListener('DOMContentLoaded', function() {
         quantityInputs.forEach(input => {
             const quantity = parseInt(input.value || 0);
             const price = parseInt(input.dataset.price || 0);
-            const productName = input.dataset.product;
+            const productId = input.dataset.product;
+            
+            // Mapiranje ID-jeva proizvoda na njihova puna imena
+            let productName;
+            switch(productId) {
+                case 'detail-1':
+                    productName = 'CoolCaps Tuba Mint';
+                    break;
+                case 'detail-2':
+                    productName = 'CoolCaps Tuba Jagoda';
+                    break;
+                case 'detail-3':
+                    productName = 'CoolCaps Box40';
+                    break;
+                default:
+                    productName = productId;
+            }
             
             totalQuantity += quantity;
             totalPrice += quantity * price;
 
             if (quantity > 0) {
-                orderDetails += `${productName}: ${quantity} kom x ${price} RSD\n`;
+                orderDetails += `${productName} ${quantity} kom. x ${price} RSD<br>`;
             }
         });
 
         // Ažuriraj ukupnu cenu
         totalAmountSpan.textContent = totalPrice + ' RSD';
         totalPriceInput.value = totalPrice;
-        orderDetailsDiv.textContent = orderDetails;
-        orderSummaryInput.value = orderDetails;
+        orderDetailsDiv.innerHTML = orderDetails;
+        orderSummaryInput.value = orderDetails.replace(/<br>/g, '\n');
         
         if (orderButton) {
             if (totalQuantity >= 3) {
