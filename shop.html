@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Prodavnica - PaperMints</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
@@ -69,33 +70,54 @@
             border-radius: 8px;
             background-color: white;
         }
+
+        .mobile-home {
+            display: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            .mobile-home {
+                display: block !important;
+                position: fixed;
+                right: 20px;
+                top: 20px;
+                z-index: 9999;
+                background: #003366;
+                color: white !important;
+                padding: 6px 12px;
+                border-radius: 15px;
+                text-decoration: none;
+                font-size: 14px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                font-weight: 500;
+            }
+
+            .mobile-home:hover {
+                background: #004480;
+            }
+
+            /* Uklanjamo blur i senku sa navigacije */
+            .main-nav {
+                background: white;
+                box-shadow: none;
+                backdrop-filter: none;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Dodati odmah nakon otvaranja body taga -->
-    <button class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <!-- Mobilni "Početna" link -->
+    <a href="index.html" class="mobile-home">Početna</a>
 
     <!-- Navigacija -->
     <nav class="main-nav">
         <div class="container">
             <div class="logo-container">
                 <a href="index.html">
-                    <img src="images/logo.png" alt="PaperMints Logo" class="logo-img">
-                    <img src="images/logo2.png" alt="PaperMints Logo 2" class="logo2-img">
+                    <img src="images/logo.png" alt="PaperMints CoolCaps Logo" class="logo-img">
+                    <img src="images/logo2.png" alt="PaperMints CoolCaps tekstualni logo" class="logo2-img">
                 </a>
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Početna</a></li>
-                <li><a href="index.html#product-details">O proizvodu</a></li>
-                <li><a href="index.html#where-to-buy">Gde kupiti?</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="index.html#contact">Kontakt</a></li>
-                <li><a href="shop.html" class="cta-nav">Poruči online</a></li>
-            </ul>
         </div>
     </nav>
 

@@ -122,6 +122,9 @@
       ]
     }
     </script>
+
+    <!-- Dodajemo link za Font Awesome u head -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <!-- Navigacija -->
@@ -221,7 +224,7 @@
                     <img src="images/omv.png" alt="OMV benzinske stanice - Ovlašćeni prodavac PaperMints proizvoda" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
-                    <img src="images/galen.jpg" alt="Galen Pharm apoteke - Pronađite PaperMints proizvode" class="partner-img" loading="lazy">
+                    <img src="images/galen.png" alt="Galen Pharm Logo" class="partner-img" loading="lazy">
                 </div>
                 <div class="partner-logo">
                     <img src="images/lipalek.jpg" alt="Lipa Lek apoteke - Kupite PaperMints CoolCaps" class="partner-img" loading="lazy">
@@ -240,6 +243,13 @@
                 </div>
                 <div class="partner-logo">
                     <img src="images/zdravkovic.png" alt="Zdravković apoteke - Kupite PaperMints proizvode" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo">
+                    <img src="images/sopharmacy.png" alt="Sopharmacy apoteke - Ovlašćeni prodavac PaperMints proizvoda" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/srbotrade.jpg" alt="Srbotrade - Distributer PaperMints proizvoda" class="partner-img" loading="lazy">
                 </div>
             </div>
         </div>
@@ -420,20 +430,39 @@
         #toggleAssistant {
             right: 20px !important;
         }
+
+        /* Dodajemo ikonicu korpe */
+        .mobile-cart {
+            display: block;
+            position: fixed;
+            right: 70px;
+            top: 20px;
+            z-index: 1000;
+            background: #003366;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-cart i {
+            font-size: 18px;
+        }
     }
     </style>
 
-    <!-- Prvo učitaj mobilnu navigaciju -->
-    <script>
-    fetch('mobile-navigation.html')
-        .then(response => response.text())
-        .then(html => {
-            document.body.insertAdjacentHTML('beforeend', html);
-            // Tek nakon što je navigacija učitana, učitaj JavaScript
-            const script = document.createElement('script');
-            script.src = 'js/mobile-nav.js';
-            document.body.appendChild(script);
-        });
-    </script>
+    <!-- Mobilni meni i korpa -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <a href="shop.html" class="mobile-cart">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
 </body>
 </html> 

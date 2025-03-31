@@ -1,24 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(() => {
-        const hamburger = document.getElementById('hamburger');
-        const mobileNav = document.getElementById('mobile-menu');
-        
-        console.log('hamburger:', hamburger); // debug
-        console.log('mobileNav:', mobileNav); // debug
-        
-        if (hamburger && mobileNav) {
-            hamburger.addEventListener('click', function() {
-                console.log('hamburger clicked!'); // debug
-                mobileNav.classList.toggle('active');
-                console.log('active class toggled'); // debug
-            });
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
 
-            // Zatvori meni kada se klikne na link
-            document.querySelectorAll('.mobile-nav a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileNav.classList.remove('active');
-                });
-            });
-        }
-    }, 100); // malo sačekaj da se DOM učita
+    hamburger.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    // Zatvori meni kada se klikne na link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            hamburger.classList.toggle('active');
+        });
+    });
 }); 
