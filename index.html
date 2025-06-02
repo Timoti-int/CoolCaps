@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Yahoo-specifični meta tagovi -->
+    <meta name="y_key" content="yahoo-site-verification">
+    <meta name="yahoo-site-verification" content="yahoo-site-verification">
+    <meta name="yahoo-bing" content="index,follow">
+    
+    <!-- Yahoo Media RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="PaperMints CoolCaps Media RSS" href="yahoo-media.xml">
+    
+    <!-- Preload ključnih resursa -->
+    <link rel="preload" href="images/logo.png" as="image">
+    <link rel="preload" href="images/hero1.jpeg" as="image">
+    <link rel="preload" href="css/style.css" as="style">
+    
+    <!-- Odloženo učitavanje CSS-a koji nije kritičan -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile-styles.css" media="print" onload="this.media='all'">
+    
+    <!-- SEO Meta tagovi -->
+    <title>PaperMints CoolCaps - Svež dah u svakom trenutku | Osvežavajuće kapsule za dah</title>
+    <meta name="description" content="PaperMints CoolCaps - inovativne dvoslojne kapsule za dugotrajan svež dah. Instant i produženo osveženje sa prirodnim sastojcima. Dostupno u apotekama širom Srbije.">
+    <meta name="keywords" content="PaperMints, CoolCaps, osveženje daha, kapsule za svež dah, mint kapsule, osvežavajuće kapsule, oralna higijena">
+    
+    <!-- Knowledge Graph markup za Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "url": "https://papermints.rs",
+      "logo": "https://papermints.rs/images/logo.png",
+      "@id": "https://papermints.rs/#organization",
+      "name": "PaperMints Srbija",
+      "image": "https://papermints.rs/images/logo.png",
+      "description": "PaperMints CoolCaps - Osvežavajuće kapsule za dugotrajan svež dah",
+      "brand": {
+        "@type": "Brand",
+        "name": "PaperMints",
+        "logo": "https://papermints.rs/images/logo.png"
+      }
+    }
+    </script>
+    
+    <!-- Logo meta tagovi -->
+    <meta itemprop="image" content="https://papermints.rs/images/logo.png">
+    <meta property="og:image" content="https://papermints.rs/images/logo.png">
+    <meta name="twitter:image" content="https://papermints.rs/images/logo.png">
+    
+    <!-- Open Graph meta tagovi za društvene mreže -->
+    <meta property="og:title" content="PaperMints CoolCaps - Svež dah u svakom trenutku">
+    <meta property="og:description" content="Inovativne dvoslojne kapsule za dugotrajan svež dah. Instant i produženo osveženje sa prirodnim sastojcima.">
+    <meta property="og:url" content="https://papermints.rs">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card meta tagovi -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PaperMints CoolCaps - Svež dah u svakom trenutku">
+    <meta name="twitter:description" content="Inovativne dvoslojne kapsule za dugotrajan svež dah. Instant i produženo osveženje sa prirodnim sastojcima.">
+    
+    <!-- Dodatni meta tagovi -->
+    <meta name="author" content="PaperMints Srbija">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Serbian">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://papermints.rs">
+    
+    <!-- Favicon-i -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon-128x128.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="favicon-256x256.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    
+    <!-- Strukturirani podaci za Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PaperMints Srbija",
+      "url": "https://papermints.rs",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://papermints.rs/images/logo.png",
+        "width": "512",
+        "height": "512"
+      },
+      "image": "https://papermints.rs/images/logo.png",
+      "description": "PaperMints CoolCaps - inovativne dvoslojne kapsule za dugotrajan svež dah",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "papermintssrbija@gmail.com",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.instagram.com/papermints_srbija/"
+      ]
+    }
+    </script>
+
+    <!-- Strukturirani podaci za lokalnu kompaniju -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PaperMints Srbija",
+      "url": "https://papermints.rs",
+      "logo": "https://papermints.rs/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "papermintssrbija@gmail.com",
+        "contactType": "customer service"
+      },
+      "sameAs": [
+        "https://www.instagram.com/papermints_srbija/"
+      ]
+    }
+    </script>
+
+    <!-- Dodajemo link za Font Awesome u head -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigacija -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="CoolCaps Logo" class="logo-img">
+                </a>
+                <a href="index.html">
+                    <img src="images/logo2.png" alt="CoolCaps Logo 2" class="logo2-img">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Početna</a></li>
+                <li><a href="#product-details">O proizvodu</a></li>
+                <li><a href="#where-to-buy">Gde kupiti?</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+                <li><a href="shop.html" class="cta-nav">Poruči online</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero sekcija -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="images/hero1.jpeg" alt="PaperMints CoolCaps osvežavajuće kapsule u elegantnom pakovanju" fetchpriority="high">
+            </div>
+            <div class="hero-image">
+                <img src="images/hero2.jpeg" alt="PaperMints CoolCaps dvoslojna tehnologija za dugotrajan svež dah" loading="lazy">
+            </div>
+            <div class="hero-image">
+                <img src="images/hero3.jpeg" alt="PaperMints CoolCaps prirodni sastojci za instant osveženje" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover more dugme -->
+    <div class="discover-more">
+        <a href="#product-details" class="discover-btn">Otkrij više</a>
+    </div>
+
+    <!-- Product details sekcija -->
+    <section id="product-details" class="product-details">
+        <div class="product-details-container">
+            <div class="product-image">
+                <img src="images/product-detail-1.png" alt="CoolCaps Tuba Mint - 18 osvežavajućih kapsula sa ukusom mente" class="detail-img" loading="lazy">
+                <div class="image-description">
+                    <h3>CoolCaps Tuba Mint</h3>
+                    <p>18 kapsula</p>
+                </div>
+            </div>
+            <div class="product-image">
+                <img src="images/product-detail-2.png" alt="CoolCaps Box40 - Ekonomično pakovanje sa 40 kapsula za dugotrajan svež dah" class="detail-img" loading="lazy">
+                <div class="image-description">
+                    <h3>CoolCaps Box40</h3>
+                    <p>40 kapsula</p>
+                </div>
+            </div>
+            <div class="product-image">
+                <img src="images/product-detail-3.png" alt="CoolCaps Tuba Jagoda - 18 osvežavajućih kapsula sa ukusom jagode" class="detail-img" loading="lazy">
+                <div class="image-description">
+                    <h3>CoolCaps Tuba Jagoda</h3>
+                    <p>18 kapsula</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- O Proizvodu Sekcija -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>O proizvodu</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Dugotrajan efekat</h3>
+                    <p>Dvoslojna formula osigurava instant i dugotrajno osveženje daha.</p>
+                </div>
+                <div class="feature">
+                    <h3>Faza 1</h3>
+                    <p>Spoljašnji omotač se otapa na jeziku i obezbeđuje instant svež dah!</p>
+                </div>
+                <div class="feature">
+                    <h3>Faza 2</h3>
+                    <p>Kada se proguta unutrašnja kapsula, obezbeđuje se produžena svežina daha iz stomaka</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gde Kupiti Sekcija -->
+    <section id="where-to-buy" class="where-to-buy">
+        <div class="container">
+            <h2>Gde kupiti?</h2>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <img src="images/omv.png" alt="OMV benzinske stanice - Ovlašćeni prodavac PaperMints proizvoda" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/galen.png" alt="Galen Pharm Logo" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/lipalek.jpg" alt="Lipa Lek apoteke - Kupite PaperMints CoolCaps" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/vipera.jpg" alt="Vipera apoteke - Dostupni PaperMints proizvodi" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/superdrmax.png" alt="Super Dr. Max apoteke - Ovlašćeni distributer PaperMints proizvoda" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/internationalhealth.png" alt="International Health apoteke - PaperMints partner" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/vista.jpg" alt="Vista apoteke - Pronađite PaperMints CoolCaps" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/zdravkovic.png" alt="Zdravković apoteke - Kupite PaperMints proizvode" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo">
+                    <img src="images/sopharmacy.png" alt="Sopharmacy apoteke - Ovlašćeni prodavac PaperMints proizvoda" class="partner-img" loading="lazy">
+                </div>
+                <div class="partner-logo">
+                    <img src="images/srbotrade.jpg" alt="Srbotrade - Distributer PaperMints proizvoda" class="partner-img" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Iskustva Korisnika Sekcija -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Iskustva korisnika</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p>"Kao stomatolog, često preporučujem CoolCaps svojim pacijentima. Izuzetno sam zadovoljna rezultatima i povratnim informacijama."</p>
+                        <div class="testimonial-author">
+                            <span class="name">Dr Marija Simić</span>
+                            <span class="profession">Stomatolog</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p>"U poslu prodaje, svež dah je od ključnog značaja. CoolCaps mi pomaže da ostanem siguran tokom celodnevnih sastanaka."</p>
+                        <div class="testimonial-author">
+                            <span class="name">Stefan Marković</span>
+                            <span class="profession">Menadžer prodaje</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                        <p>"Kao predavač, važno mi je da imam svež dah tokom celodnevnih predavanja. CoolCaps je postao moj svakodnevni saveznik."</p>
+                        <div class="testimonial-author">
+                            <span class="name">Ana Petrović</span>
+                            <span class="profession">Univerzitetski profesor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt Sekcija -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Kontaktirajte nas</h2>
+            <form action="mailto:papermintssrbija@gmail.com?subject=Upit" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Ime i prezime</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email adresa</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Vaša poruka</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Pošalji poruku</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Social Media Sekcija -->
+    <section id="social" class="social">
+        <div class="container">
+            <h2>Pratite nas na društvenim mrežama</h2>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/papermints_srbija/" target="_blank" class="social-link">
+                    <img src="images/instagram.jpg" alt="Instagram" class="social-icon">
+                    <span>@papermints_srbija</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">Facebook</a>
+                </div>
+                <p class="copyright">&copy; 2025 PaperMints CoolCaps</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Samo potrebni JavaScript fajlovi -->
+    <script defer src="js/shop.js"></script>
+    <script defer src="js/mobile-nav.js"></script>
+    <script defer src="js/chat.js"></script>
+
+    <!-- Chat container i button -->
+    <div class="virtual-assistant">
+        <button class="assistant-button" id="toggleAssistant" style="position: fixed; bottom: 50px; right: 80px; z-index: 1000; border: none; background: none; cursor: pointer;">
+            <img src="images/asistent11.png" alt="Virtualni asistent">
+        </button>
+        
+        <div id="chatContainer" class="chat-container" style="display: none;">
+            <div class="chat-content">
+                <div class="chat-header">
+                    <h3>PaperMints Asistent</h3>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="message bot-message">Zdravo! Kako Vam mogu pomoći?</div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="userInput" placeholder="Postavite pitanje...">
+                    <button id="sendMessage">Pošalji</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </script>
+
+    <style>
+    @media screen and (max-width: 768px) {
+        /* Hamburger dugme */
+        .hamburger {
+            display: block;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Stilizacija navigacije za mobile */
+        .nav-links {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            height: 100vh;
+            width: 250px;
+            background: white;
+            padding: 50px 20px;
+            transition: 0.3s;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        /* Kada je meni otvoren */
+        .nav-links.active {
+            right: 0;
+        }
+
+        /* Vertikalna lista linkova */
+        .nav-links li {
+            display: block;
+            margin: 20px 0;
+        }
+
+        /* Pomeramo asistenta više udesno na mobilnoj verziji */
+        #toggleAssistant {
+            right: 20px !important;
+        }
+
+        /* Dodajemo ikonicu korpe */
+        .mobile-cart {
+            display: block;
+            position: fixed;
+            right: 70px;
+            top: 20px;
+            z-index: 1000;
+            background: #003366;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-cart i {
+            font-size: 18px;
+        }
+    }
+    </style>
+
+    <!-- Mobilni meni i korpa -->
+    <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <a href="shop.html" class="mobile-cart">
+        <i class="fas fa-shopping-cart"></i>
+    </a>
+</body>
+</html> 

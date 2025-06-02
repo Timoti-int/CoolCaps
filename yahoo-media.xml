@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>PaperMints CoolCaps - Osvežavajuće kapsule za svež dah</title>
+    <link>https://papermints.rs</link>
+    <description>PaperMints CoolCaps - inovativne dvoslojne kapsule za dugotrajan svež dah. Instant i produženo osveženje sa prirodnim sastojcima.</description>
+    
+    <item>
+      <title>PaperMints CoolCaps Logo</title>
+      <link>https://papermints.rs/images/logo.png</link>
+      <media:content url="https://papermints.rs/images/logo.png" type="image/png">
+        <media:title>PaperMints CoolCaps Logo</media:title>
+        <media:description>Zvanični logo PaperMints CoolCaps brenda</media:description>
+        <media:keywords>PaperMints, CoolCaps, logo, brend</media:keywords>
+      </media:content>
+    </item>
+    
+    <item>
+      <title>CoolCaps Tuba Mint</title>
+      <link>https://papermints.rs/images/product-detail-1.png</link>
+      <media:content url="https://papermints.rs/images/product-detail-1.png" type="image/png">
+        <media:title>CoolCaps Tuba Mint</media:title>
+        <media:description>18 osvežavajućih kapsula sa ukusom mente</media:description>
+        <media:keywords>CoolCaps, mint, kapsule, osveženje daha</media:keywords>
+      </media:content>
+    </item>
+    
+    <item>
+      <title>CoolCaps Box40</title>
+      <link>https://papermints.rs/images/product-detail-2.png</link>
+      <media:content url="https://papermints.rs/images/product-detail-2.png" type="image/png">
+        <media:title>CoolCaps Box40</media:title>
+        <media:description>Ekonomično pakovanje sa 40 kapsula za dugotrajan svež dah</media:description>
+        <media:keywords>CoolCaps, Box40, kapsule, ekonomično pakovanje</media:keywords>
+      </media:content>
+    </item>
+    
+    <item>
+      <title>CoolCaps Tuba Jagoda</title>
+      <link>https://papermints.rs/images/product-detail-3.png</link>
+      <media:content url="https://papermints.rs/images/product-detail-3.png" type="image/png">
+        <media:title>CoolCaps Tuba Jagoda</media:title>
+        <media:description>18 osvežavajućih kapsula sa ukusom jagode</media:description>
+        <media:keywords>CoolCaps, jagoda, kapsule, osveženje daha</media:keywords>
+      </media:content>
+    </item>
+  </channel>
+</rss> 

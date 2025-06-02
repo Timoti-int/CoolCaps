@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    
+    <!-- Početna stranica -->
+    <url>
+        <loc>https://papermints.rs/</loc>
+        <lastmod>2024-03-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://papermints.rs/images/product-detail-1.png</image:loc>
+            <image:title>PaperMints CoolCaps Tuba Mint</image:title>
+            <image:caption>Osvežavajuće kapsule za dugotrajan svež dah</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://papermints.rs/images/product-detail-2.png</image:loc>
+            <image:title>PaperMints CoolCaps Box40</image:title>
+            <image:caption>Ekonomično pakovanje sa 40 kapsula</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://papermints.rs/images/product-detail-3.png</image:loc>
+            <image:title>PaperMints CoolCaps Tuba Jagoda</image:title>
+            <image:caption>Osvežavajuće kapsule sa ukusom jagode</image:caption>
+        </image:image>
+    </url>
+
+    <!-- Blog stranica -->
+    <url>
+        <loc>https://papermints.rs/blog.html</loc>
+        <lastmod>2024-03-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Shop stranica -->
+    <url>
+        <loc>https://papermints.rs/shop.html</loc>
+        <lastmod>2024-03-05</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+</urlset> 
