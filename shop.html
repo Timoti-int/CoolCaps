@@ -9,7 +9,8 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            emailjs.init("YOUR_USER_ID"); // Ubacite vaš EmailJS User ID
+            // EmailJS Public Key - zamenite sa vašim ključem
+            emailjs.init("Q2jLJEZui7pMbm7XX"); // Zamenite sa vašim EmailJS Public Key
         })();
     </script>
     <style>
@@ -161,11 +162,7 @@
                 </div>
 
                 <!-- Forma za naručivanje -->
-                <form id="orderForm" class="order-form" action="https://formsubmit.co/papermintssrbija@gmail.com" method="POST">
-                    <input type="hidden" name="_subject" value="Nova PaperMints porudžbina">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://coolcaps.github.io/thanks.html">
+                <form id="orderForm" class="order-form">
                     
                     <h3>Podaci za dostavu</h3>
                     <div class="name-details">

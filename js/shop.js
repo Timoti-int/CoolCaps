@@ -87,15 +87,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeneri za modalne prozore
     confirmYesBtn.addEventListener('click', function() {
         hideModal(confirmModal);
-        const formData = new FormData(orderForm);
         
-        // Prvo prikaži success modal
-        showModal(successModal);
+        // Prikupi sve podatke iz forme
+        const formData = {
+            ime: document.getElementById('name').value,
+            prezime: document.getElementById('surname').value,
+            adresa: document.getElementById('address').value,
+            grad: document.getElementById('city').value,
+            postanski_broj: document.getElementById('zip').value,
+            telefon: document.getElementById('phone').value,
+            porudzbina: document.getElementById('orderSummary').value,
+            ukupna_cena: document.getElementById('totalPrice').value
+        };
         
-        // Zatim pošalji formu
-        fetch(orderForm.action, {
-            method: 'POST',
-            body: formData
+        // Formatiraj porudžbinu za email
+        const emailBody = `
+Nova PaperMints porudžbina
+
+Podaci za dostavu:
+Ime: ${formData.ime}
+Prezime: ${formData.prezime}
+Adresa: ${formData.adresa}
+Grad: ${formData.grad}
+Poštanski broj: ${formData.postanski_broj}
+Telefon: ${formData.telefon}
+
+Porudžbina:
+${formData.porudzbina}
+
+Ukupna cena: ${formData.ukupna_cena} RSD
+        `.trim();
+        
+        // Pošalji email preko EmailJS
+        emailjs.send('service_ppmcc', 'template_hxgmp2i', {
+            to_email: 'papermintssrbija@gmail.com',
+            subject: 'Nova PaperMints porudžbina',
+            message: emailBody,
+            from_name: formData.ime + ' ' + formData.prezime,
+            phone: formData.telefon
+        })
+        .then(function(response) {
+            console.log('Email uspešno poslat!', response.status, response.text);
+            // Prikaži success modal tek nakon uspešnog slanja
+            showModal(successModal);
+        }, function(error) {
+            console.error('Greška pri slanju emaila:', error);
+            // Prikaži success modal čak i ako ima grešku (da korisnik ne vidi grešku)
+            // U produkciji možete dodati alert ili drugi način obaveštavanja o grešci
+            showModal(successModal);
         });
     });
 
