@@ -96,11 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
             grad: document.getElementById('city').value,
             postanski_broj: document.getElementById('zip').value,
             telefon: document.getElementById('phone').value,
+            email: document.getElementById('email').value,
             porudzbina: document.getElementById('orderSummary').value,
             ukupna_cena: document.getElementById('totalPrice').value
         };
         
-        // Formatiraj porudžbinu za email
+        // Formatiraj porudžbinu za email (za vas)
         const emailBody = `
 Nova PaperMints porudžbina
 
@@ -111,6 +112,7 @@ Adresa: ${formData.adresa}
 Grad: ${formData.grad}
 Poštanski broj: ${formData.postanski_broj}
 Telefon: ${formData.telefon}
+Email: ${formData.email}
 
 Porudžbina:
 ${formData.porudzbina}
@@ -118,16 +120,53 @@ ${formData.porudzbina}
 Ukupna cena: ${formData.ukupna_cena} RSD
         `.trim();
         
-        // Pošalji email preko EmailJS
-        emailjs.send('service_ppmcc', 'template_hxgmp2i', {
+        // Formatiraj potvrdu za kupca
+        const potvrdaBody = `
+Poštovani/a ${formData.ime} ${formData.prezime},
+
+Hvala vam na porudžbini!
+
+Vaša porudžbina je uspešno primljena i biće obrađena u najkraćem mogućem roku.
+
+Detalji porudžbine:
+
+${formData.porudzbina}
+
+Ukupna cena: ${formData.ukupna_cena} RSD
+
+Podaci za dostavu:
+
+${formData.adresa}
+${formData.postanski_broj} ${formData.grad}
+Kontakt telefon: ${formData.telefon}
+
+Srdačan pozdrav,
+PaperMints tim
+        `.trim();
+        
+        // Pošalji email vama (porudžbina)
+        const emailPromise1 = emailjs.send('service_ppmcc', 'template_hxgmp2i', {
             to_email: 'papermintssrbija@gmail.com',
             subject: 'Nova PaperMints porudžbina',
             message: emailBody,
             from_name: formData.ime + ' ' + formData.prezime,
+            phone: formData.telefon,
+            email: formData.email
+        });
+        
+        // Pošalji potvrdu kupcu - koristimo novi template za potvrdu
+        const emailPromise2 = emailjs.send('service_ppmcc', 'template_0p0i9bj', {
+            to_email: formData.email,
+            subject: 'Potvrda o porudžbini - PaperMints',
+            message: potvrdaBody,
+            from_name: 'PaperMints',
             phone: formData.telefon
-        })
-        .then(function(response) {
-            console.log('Email uspešno poslat!', response.status, response.text);
+        });
+        
+        // Sačekaj da se oba emaila pošalju
+        Promise.all([emailPromise1, emailPromise2])
+        .then(function(responses) {
+            console.log('Emailovi uspešno poslati!', responses);
             // Prikaži success modal tek nakon uspešnog slanja
             showModal(successModal);
         }, function(error) {
